@@ -7,9 +7,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./theme-toggle";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { usePathname } from 'next/navigation';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
   const [text] = useTypewriter({
     words: ['Transform', 'Convert', 'Translate'],
     loop: true,
@@ -17,10 +19,21 @@ export function Navbar() {
   });
 
   const menuItems = [
-    { href: "#features", label: "Features" },
+    { href: pathname === "/" ? "#features" : "/#features", label: "Features" },
     { href: "/converter", label: "Converter" },
-    { href: "#team", label: "Team" },
+    { href: pathname === "/" ? "#team" : "/#team", label: "Team" },
   ];
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname !== "/" && href.startsWith("#")) {
+      e.preventDefault();
+      window.location.href = "/" + href;
+    } else if (href.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.nav
@@ -56,6 +69,7 @@ export function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={(e) => scrollToSection(e, item.href)}
                 className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transform duration-200"
               >
                 {item.label}
@@ -94,8 +108,11 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={(e) => {
+                    scrollToSection(e, item.href);
+                    setIsOpen(false);
+                  }}
                   className="block text-muted-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </Link>
