@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRightLeft } from "lucide-react";
 import { motion } from "framer-motion";
 import { type Language } from "@/lib/languages";
+import { CopyButton } from "@/components/ui/copy-button";
 
 interface CodePanelProps {
   language: Language;
@@ -44,17 +45,20 @@ export function CodePanel({
             onChange={onLanguageChange}
             label={label}
           />
-          {showSwap && onSwap && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={onSwap}
-              className="mt-6 hover:bg-purple-500/20 transition-colors"
-              title="Swap languages"
-            >
-              <ArrowRightLeft className="h-4 w-4" />
-            </Button>
-          )}
+          <div className="flex items-center gap-2 mt-6">
+            {code && <CopyButton value={code} />}
+            {showSwap && onSwap && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={onSwap}
+                className="hover:bg-purple-500/20 transition-colors"
+                title="Swap languages"
+              >
+                <ArrowRightLeft className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
         </div>
         <CodeEditor
           value={code}

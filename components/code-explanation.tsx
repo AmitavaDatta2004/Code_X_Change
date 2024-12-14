@@ -3,6 +3,7 @@
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Loader2, BookOpen } from "lucide-react";
+import { CopyButton } from "@/components/ui/copy-button";
 
 interface CodeExplanationProps {
   explanation: string;
@@ -19,16 +20,19 @@ export function CodeExplanation({ explanation, isLoading }: CodeExplanationProps
       transition={{ duration: 0.5 }}
     >
       <Card className="p-8 mt-8 backdrop-blur-sm bg-white/10 dark:bg-gray-900/50 border-2 hover:border-purple-500 transition-all duration-300">
-        <div className="flex items-center gap-3 mb-6">
-          <BookOpen className="h-7 w-7 text-purple-500" />
-          <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-              Code Analysis
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Line by line explanation of the code
-            </p>
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <BookOpen className="h-7 w-7 text-purple-500" />
+            <div>
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Code Analysis
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Line by line explanation of the code
+              </p>
+            </div>
           </div>
+          {explanation && <CopyButton value={explanation} />}
         </div>
         
         {isLoading ? (
