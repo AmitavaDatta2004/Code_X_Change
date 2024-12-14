@@ -9,6 +9,10 @@ import {
   Download,
   CheckCircle,
   Laptop,
+  BookOpen,
+  Sparkles,
+  Zap,
+  Moon,
 } from "lucide-react";
 import { useRef } from "react";
 
@@ -17,7 +21,7 @@ const features = [
     icon: Languages,
     title: "Language-to-Language Conversion",
     description:
-      "Convert code between multiple programming languages with high accuracy.",
+      "Convert code between multiple programming languages with high accuracy using AI.",
     gradient: "from-blue-500 to-purple-500",
   },
   {
@@ -30,26 +34,44 @@ const features = [
   {
     icon: Code2,
     title: "Syntax Highlighting",
-    description: "Clear syntax highlighting for better code readability.",
+    description: "Advanced syntax highlighting for all supported languages including C/C++.",
     gradient: "from-pink-500 to-red-500",
+  },
+  {
+    icon: BookOpen,
+    title: "AI-Powered Code Explanation",
+    description: "Get detailed line-by-line explanations of your code using advanced AI.",
+    gradient: "from-red-500 to-orange-500",
+  },
+  {
+    icon: Moon,
+    title: "Dark/Light Theme",
+    description: "Switch between dark and light themes for comfortable coding in any environment.",
+    gradient: "from-orange-500 to-yellow-500",
+  },
+  {
+    icon: Sparkles,
+    title: "Beautiful UI/UX",
+    description: "Enjoy a modern, responsive interface with smooth animations and transitions.",
+    gradient: "from-yellow-500 to-green-500",
   },
   {
     icon: CheckCircle,
     title: "Error Checking",
     description: "Validate input code for syntax errors before conversion.",
-    gradient: "from-red-500 to-orange-500",
+    gradient: "from-green-500 to-teal-500",
   },
   {
     icon: Laptop,
     title: "Cross-Platform Support",
-    description: "Works seamlessly across all major operating systems.",
-    gradient: "from-orange-500 to-yellow-500",
+    description: "Works seamlessly across all major operating systems and browsers.",
+    gradient: "from-teal-500 to-cyan-500",
   },
   {
     icon: Download,
     title: "Downloadable Output",
-    description: "Download converted code files with proper extensions.",
-    gradient: "from-yellow-500 to-green-500",
+    description: "Download converted code files with proper language extensions.",
+    gradient: "from-cyan-500 to-blue-500",
   },
 ];
 
