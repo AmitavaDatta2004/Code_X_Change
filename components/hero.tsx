@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Code2, Sparkles, Terminal, Zap } from "lucide-react";
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
@@ -25,7 +25,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
 
   useEffect(() => {
-    const newDots = Array.from({ length: 20 }, (_, i) => ({
+    const newDots = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
       top: Math.random() * 100,
@@ -50,16 +50,16 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-background via-background to-muted dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-800 transition-colors duration-500"
     >
-      <div className="absolute inset-0 bg-grid-white/10 bg-grid-pattern dark:bg-grid-white/5" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {dots.map((dot) => (
           <motion.div
             key={dot.id}
-            className="absolute h-2 w-2 rounded-full bg-purple-500/30 dark:bg-purple-400/30"
+            className="absolute h-2 w-2 rounded-full bg-teal-300/50 dark:bg-yellow-200/30"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: [0.3, 0.8, 0.3],
@@ -101,21 +101,21 @@ export function Hero() {
             }}
             className="relative inline-block"
           >
-            <Sparkles className="h-20 w-20 mx-auto text-purple-500 dark:text-purple-400" />
+            <Sparkles className="h-24 w-24 mx-auto text-teal-300 dark:text-yellow-200" />
             <motion.div
               className="absolute inset-0 rounded-full"
               animate={{
                 boxShadow: [
-                  "0 0 20px rgba(168, 85, 247, 0.3)",
-                  "0 0 40px rgba(168, 85, 247, 0.6)",
-                  "0 0 20px rgba(168, 85, 247, 0.3)",
+                  "0 0 20px rgba(253, 224, 71, 0.3)",
+                  "0 0 40px rgba(253, 224, 71, 0.6)",
+                  "0 0 20px rgba(253, 224, 71, 0.3)",
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-foreground">
+          <h1 className="text-5xl md:text-7xl font-bold text-white">
             <span className="inline-block">
               {text}
               <Cursor cursorStyle="_" />
@@ -126,7 +126,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-xl text-muted-foreground"
+            className="text-xl text-teal-100 dark:text-yellow-200"
           >
             Convert code between multiple programming languages instantly with our
             advanced AI-powered converter.
@@ -141,7 +141,7 @@ export function Hero() {
             <Link href="/converter">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto bg-teal-400 hover:bg-teal-500 text-purple-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Start Converting
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -151,7 +151,7 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-2 border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full sm:w-auto border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-purple-900 dark:border-yellow-300 dark:text-yellow-300 dark:hover:bg-yellow-300 dark:hover:text-purple-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Learn More
               </Button>
@@ -162,3 +162,4 @@ export function Hero() {
     </section>
   );
 }
+
