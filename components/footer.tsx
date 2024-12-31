@@ -17,7 +17,7 @@ export function Footer() {
           >
             <div className="flex items-center space-x-2">
               <Code2 className="h-6 w-6 text-white" />
-              <span className="font-bold text-2xl">CodeConverter</span>
+              <span className="font-bold text-2xl">Code_X_Change</span>
             </div>
             <p className="text-gray-200">
               Transform your code between programming languages with ease.
