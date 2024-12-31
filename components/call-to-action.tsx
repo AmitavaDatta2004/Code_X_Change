@@ -20,7 +20,7 @@ export function CallToAction() {
           </p>
           <Link href="/converter">
             <Button size="lg" variant="secondary" className="mt-4">
-              Try Code Converter
+              Try Code_X_Change
             </Button>
           </Link>
         </motion.div>

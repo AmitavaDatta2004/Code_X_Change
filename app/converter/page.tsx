@@ -96,7 +96,7 @@ export default function Converter() {
             transition={{ duration: 0.5 }}
             className="text-center space-y-4"
           >
-            <h1 className="text-4xl font-bold text-white">Code Converter</h1>
+            <h1 className="text-4xl font-bold text-white">Code_X_Change</h1>
             <p className="text-white/90">
               Transform your code between different programming languages instantly
             </p>
