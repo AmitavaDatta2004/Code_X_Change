@@ -50,7 +50,7 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-800 transition-colors duration-500"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-800 transition-colors duration-500"
     >
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       
@@ -59,7 +59,7 @@ export function Hero() {
         {dots.map((dot) => (
           <motion.div
             key={dot.id}
-            className="absolute h-2 w-2 rounded-full bg-teal-300/50 dark:bg-yellow-200/30"
+            className="absolute h-2 w-2 rounded-full bg-amber-300/50 dark:bg-amber-200/30"
             initial={{ opacity: 0, scale: 0 }}
             animate={{
               opacity: [0.3, 0.8, 0.3],
@@ -101,14 +101,14 @@ export function Hero() {
             }}
             className="relative inline-block"
           >
-            <Sparkles className="h-24 w-24 mx-auto text-teal-300 dark:text-yellow-200" />
+            <Sparkles className="h-24 w-24 mx-auto text-amber-300 dark:text-amber-200" />
             <motion.div
               className="absolute inset-0 rounded-full"
               animate={{
                 boxShadow: [
-                  "0 0 20px rgba(253, 224, 71, 0.3)",
-                  "0 0 40px rgba(253, 224, 71, 0.6)",
-                  "0 0 20px rgba(253, 224, 71, 0.3)",
+                  "0 0 20px rgba(252, 211, 77, 0.3)",
+                  "0 0 40px rgba(252, 211, 77, 0.6)",
+                  "0 0 20px rgba(252, 211, 77, 0.3)",
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -126,7 +126,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
-            className="text-xl text-teal-100 dark:text-yellow-200"
+            className="text-xl text-emerald-100 dark:text-emerald-200"
           >
             Convert code between multiple programming languages instantly with our
             advanced AI-powered converter.
@@ -141,7 +141,7 @@ export function Hero() {
             <Link href="/converter">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-teal-400 hover:bg-teal-500 text-purple-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="w-full sm:w-auto bg-amber-400 hover:bg-amber-500 text-emerald-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Start Converting
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -151,7 +151,7 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-purple-900 dark:border-yellow-300 dark:text-yellow-300 dark:hover:bg-yellow-300 dark:hover:text-purple-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="w-full sm:w-auto border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-emerald-900 dark:border-amber-300 dark:text-amber-300 dark:hover:bg-amber-300 dark:hover:text-emerald-900 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 Learn More
               </Button>
