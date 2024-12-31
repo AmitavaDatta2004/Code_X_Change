@@ -8,6 +8,7 @@ import { ActionButtons } from "@/components/converter/action-buttons";
 import { CodeExplanation } from "@/components/code-explanation";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/navbar";
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 
 export default function Converter() {
   const [sourceCode, setSourceCode] = useState("");
@@ -17,6 +18,14 @@ export default function Converter() {
   const [isConverting, setIsConverting] = useState(false);
   const [explanation, setExplanation] = useState("");
   const [isExplaining, setIsExplaining] = useState(false);
+
+  const [text] = useTypewriter({
+    words: ['Code_X_Change', 'Transform Your Code', 'Instant Conversion'],
+    loop: true,
+    delaySpeed: 2000,
+    deleteSpeed: 50,
+    typeSpeed: 100,
+  });
 
   const handleConvert = async () => {
     if (!sourceCode.trim()) {
@@ -96,8 +105,11 @@ export default function Converter() {
             transition={{ duration: 0.5 }}
             className="text-center space-y-4"
           >
-            <h1 className="text-4xl font-bold text-white">Code_X_Change</h1>
-            <p className="text-white/90">
+            <h1 className="text-4xl font-bold text-amber-300 dark:text-amber-200">
+              <span>{text}</span>
+              <Cursor cursorStyle="_" />
+            </h1>
+            <p className="text-emerald-100 dark:text-emerald-200">
               Transform your code between different programming languages instantly
             </p>
           </motion.div>
@@ -141,3 +153,4 @@ export default function Converter() {
     </>
   );
 }
+
