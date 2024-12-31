@@ -88,7 +88,7 @@ export default function Converter() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 pt-16">
+      <main className="min-h-screen bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-800 transition-colors duration-500 pt-16">
         <div className="container mx-auto px-4 py-12 space-y-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
