@@ -53,7 +53,7 @@ export function Hero() {
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-800 transition-colors duration-500"
     >
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-      
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {dots.map((dot) => (
@@ -114,14 +114,14 @@ export function Hero() {
               transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.div>
-          
+
           <h1 className="text-5xl md:text-7xl font-bold text-white">
             <span className="inline-block">
               {text}
               <Cursor cursorStyle="_" />
             </span>
           </h1>
-          
+
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -162,4 +162,3 @@ export function Hero() {
     </section>
   );
 }
-
