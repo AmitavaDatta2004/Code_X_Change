@@ -10,18 +10,18 @@ const team = [
   {
     name: "Amitava Datta",
     role: "Full Stack Developer",
-    image: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400&h=400&q=80",
+    image: "./collaborators/AmitavaDatta.png",
     github: "#",
     linkedin: "#",
-    email: "mailto:amitava@example.com",
+    email: "mailto:dattaarup2004@gmail.com",
   },
   {
     name: "Pranay De",
     role: "Full Stack Developer",
-    image: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=400&q=80",
+    image: "./collaborators/PranayDe.jpg",
     github: "#",
     linkedin: "#",
-    email: "mailto:pranay@example.com",
+    email: "mailto:pranayde201@gmail.com",
   },
 ];
 
