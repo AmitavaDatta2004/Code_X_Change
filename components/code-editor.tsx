@@ -12,6 +12,7 @@ import "ace-builds/src-noconflict/mode-ruby";
 import "ace-builds/src-noconflict/mode-golang";
 import "ace-builds/src-noconflict/mode-swift";
 import "ace-builds/src-noconflict/mode-rust";
+import "ace-builds/src-noconflict/theme-monokai"; // Colorful theme
 import "ace-builds/src-noconflict/theme-github_dark";
 import "ace-builds/src-noconflict/theme-github";
 import { useTheme } from "next-themes";
@@ -48,14 +49,27 @@ export function CodeEditor({
 }: CodeEditorProps) {
   const { theme } = useTheme();
 
+  // Define vibrant gradient backgrounds for light and dark themes
+  const editorContainerClass = theme === "dark" 
+    ? "bg-gradient-to-r from-purple-800 to-blue-900 border-blue-700" 
+    : "bg-gradient-to-r from-yellow-200 to-pink-300 border-pink-500";
+
+  const languageIndicatorClass = theme === "dark" 
+    ? "bg-gradient-to-r from-green-600 to-green-800" 
+    : "bg-gradient-to-r from-orange-400 to-orange-600";
+
+  const editorBackgroundClass = theme === "dark" 
+    ? "bg-gradient-to-b from-gray-900 to-gray-800" 
+    : "bg-gradient-to-b from-white to-gray-100";
+
   return (
-    <div className="relative rounded-lg overflow-hidden border bg-background">
-      <div className="absolute top-2 right-2 text-xs text-muted-foreground bg-background/50 px-2 py-1 rounded-md backdrop-blur-sm z-10">
+    <div className={`relative rounded-lg overflow-hidden border-2 ${editorContainerClass} shadow-lg`}>
+      <div className={`absolute top-2 right-2 text-xs text-white ${languageIndicatorClass} px-2 py-1 rounded-md backdrop-blur-sm z-10`}>
         {language}
       </div>
       <AceEditor
         mode={languageMap[language] || "text"}
-        theme={theme === "dark" ? "github_dark" : "github"}
+        theme={theme === "dark" ? "monokai" : "github"}
         value={value}
         onChange={onChange}
         name={`editor-${language}`}
@@ -76,7 +90,7 @@ export function CodeEditor({
           tabSize: 2,
           useWorker: false,
         }}
-        className="font-mono"
+        className={`font-mono ${editorBackgroundClass} border-4 border-yellow-500 rounded-lg`} // Vibrant border and rounded corners
       />
     </div>
   );
