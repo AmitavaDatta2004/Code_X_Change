@@ -56,8 +56,8 @@ export function Navbar() {
             >
               <Code2 className="h-6 w-6 text-primary" />
             </motion.div>
-            <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
-              Code<span className="text-primary">Converter</span>
+            <span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-yellow-500">
+              Code<span className="text-primary">_X_</span><span className="font-bold text-xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-pink-500">Exchange</span>
             </span>
           </Link>
 
