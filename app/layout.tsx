@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CodeConverter - Transform Your Code Between Languages',
+  title: 'Code_X_Change - Transform Your Code Between Languages',
   description: 'Convert code between multiple programming languages instantly with our advanced AI-powered converter.',
 };
 

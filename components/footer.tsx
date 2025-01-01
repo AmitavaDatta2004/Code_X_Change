@@ -88,7 +88,7 @@ export function Footer() {
           className="mt-12 pt-8 border-t border-white text-center text-gray-200"
         >
           <p>
-            &copy; {new Date().getFullYear()} CodeConverter. All rights reserved.{' '}
+            &copy; {new Date().getFullYear()} Code_X_Change. All rights reserved.{' '}
             <motion.span
               initial={{ scale: 1 }}
               animate={{ scale: [1, 1.2, 1] }}
