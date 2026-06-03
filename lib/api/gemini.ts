@@ -17,7 +17,7 @@ export class GeminiAPI {
   static getModel() {
     const genAI = this.initialize();
     return genAI.getGenerativeModel({
-      model: "gemini-2.5-pro",
+      model: "gemini-3.5-flash",
       generationConfig: {
         temperature: 0.3,
         topP: 0.8,
